@@ -1,3 +1,35 @@
 {{ template "base.html" . }}
 {{ define "title" }}Welcome to my web!!!{{ end }}
-{{ define "content" }}<h1>Hello I am SeaotterMS!!!</h1>{{ end }}
+{{ define "content" }}
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <form action="/submit" method="post">
+            <hr/>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">></span>
+                <input name="name" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <hr/>
+            <select name="official-document" class="form-select" aria-label="Default select example">
+                <option selected>選擇公文類型</option>
+                <option value="fast">急件</option>
+                <option value="normal">一般件</option>
+            </select>
+            <hr/>
+            <select name="destination" class="form-select" aria-label="Default select example">
+                <option selected>選擇公文目的地</option>
+                <option value="accounting">會計室</option>
+                <option value="district-chief">區長室</option>
+                <option value="secretary">秘書室</option>
+                <option value="others">其他</option>
+            </select>
+            <hr/>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">送出</button>
+            </div>
+        </div>
+    </form>
+    <div class="col-2"></div>
+</div>
+{{ end }}
